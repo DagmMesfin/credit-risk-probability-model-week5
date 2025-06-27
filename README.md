@@ -50,10 +50,32 @@ credit-risk-model/
 
 ### 🧠 Task 1: Credit Scoring Business Understanding
 
-We'll write the Credit Scoring Business Understanding section for your README.md, answering:
-- Why Basel II requires interpretability?
-- Why a proxy variable is needed?
-- Trade-offs: interpretable vs high-performing models.
+In real-world financial systems, interpretability and regulatory compliance are just as important as accuracy. Here’s what we’ve understood so far:
+
+#### 📘 Why Basel II Emphasizes Model Transparency
+
+The **Basel II Accord** requires banks to manage and justify credit risk assessments using internal models that are explainable and auditable. This means we must **build interpretable models** that regulators and auditors can understand, trust, and verify.
+
+#### ⚠️ Why We Create a Proxy Variable
+
+Our data doesn’t include a `default` label, so we define a **proxy credit risk variable** using customer behavior (Recency, Frequency, Monetary). This proxy lets us predict risk even without direct labels.
+
+But it's important to note:
+
+* The proxy might not reflect actual defaults.
+* Mislabeling could hurt financial performance or fairness.
+* We’ll need careful documentation, validation, and performance tracking to reduce risk.
+
+#### ⚖️ Trade-offs: Interpretable vs. Complex Models
+
+| Factor              | Logistic Regression with WoE  | Gradient Boosting Models         |
+| ------------------- | ----------------------------- | -------------------------------- |
+| Interpretability    | Very high                     |   Low                            |
+| Performance         | Lower but stable              |   Higher accuracy                |
+| Regulation-friendly | Easy to justify               |   Needs heavy explanation        |
+| Use case            | First model in regulated bank | Complex relationships and tuning |
+
+---
 
 ### 📊 Task 2: Exploratory Data Analysis (EDA)
 
