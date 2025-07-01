@@ -9,3 +9,4 @@ pynance
 scikit-learn
 ipykernel
 mlflow
+pytest
