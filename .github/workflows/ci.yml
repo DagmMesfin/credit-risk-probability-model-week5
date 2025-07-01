@@ -19,3 +19,9 @@ jobs:
 
       - name: Run tests
         run: python --version
+        
+      - name: Run linter
+        run: flake8 src/
+
+      - name: Run tests
+        run: pytest tests/
