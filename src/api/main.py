@@ -1,17 +1,22 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-import mlflow.sklearn
+import mlflow
 import numpy as np
 from .pydantic_models import FeaturesRequest
 
 app = FastAPI(title="Credit Risk Predictor")
 
 # Load best model
-model = mlflow.sklearn.load_model("exported_model")
+model = mlflow.sklearn.load_model(
+    "exported_model"
+    )
+
 
 @app.get("/")
 def read_root():
-    return {"message": "Credit Risk Model API running."}
+    return {
+        "message": "Credit Risk Model API running."
+    }
+
 
 @app.post("/predict")
 def predict_risk(input: FeaturesRequest):
