@@ -23,7 +23,7 @@ def predict_risk(input: FeaturesRequest):
     try:
         X = np.array(list(input.features.values())).reshape(1, -1)
         prediction = model.predict(X)
-        probability = model.predict_proba(X)[0]  # Get the probability of the risk class
+        probability = model.predict_proba(X)[0]
         prediction = prediction[0]  # Extract single prediction
         return {
             "is_credible": float(prediction),
